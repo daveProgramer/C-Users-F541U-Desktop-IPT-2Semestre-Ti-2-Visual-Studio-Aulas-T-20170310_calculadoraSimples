@@ -16,8 +16,30 @@ namespace Caculador_Completa.Controllers
 
         // POST: Home
         [HttpPost]
-        public ActionResult Index(string bt)
+        public ActionResult Index(
+            int operando1,
+            char operador,
+            int operando2)
         {
+
+            int resultado;
+
+            switch (operador)
+            {
+                case '+':
+                    resultado = operando1 + operando2;
+                    break;
+                case '-':
+                    resultado = operando1 - operando2;
+                    break;
+                case 'x':
+                    resultado = operando1 * operando2;
+                    break;
+                case ':':
+                    resultado = operando1 / operando2;
+                    break;
+            }
+
 
             return View();
         }
